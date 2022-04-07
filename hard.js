@@ -71,7 +71,7 @@
       let selectedOurIndex = -1;
 
       do {
-        const selectWord = prompt('Усложненное задание 2 чего вы выберите камень(к..) ножница(н..) бумаг(б..)', '');
+        const selectWord = prompt('Чего вы выберите камень(к..) ножница(н..) бумаг(б..)', '');
         //  console.log('Усложненное задание 2 чего вы выберите камень(к..) ножница(н..) бумаг(б..)', selectWord);
 
         if (FIGURES_RUS[0].indexOf(selectWord) === 0) {
