@@ -68,7 +68,7 @@
 
       let selectedtheirindex = -1;
       let selectedOurIndex = -1;
-
+/*    ЭТОТ ЧАСТЬ ДЛЯ ВЫХОД ИГРУ ЧТОБЫ РЕШАТ КТО НАЧИНАТЬ                        */
       do {
         const selectWord = prompt('Чего вы выберите камень(к..) ножница(н..) бумаг(б..)', '');     
 
@@ -97,6 +97,10 @@
         }
       } while (beginuser == -1);
 
+/*    ИГРА НАЧИНАЕТ                         */
+
+
+ /* ЕСЛИ НЕ ОСТАЛОСЬ ШАРИКОВ */ 
 
       do {
         if (result.player === 0 || result.computer === 0) {
@@ -108,17 +112,22 @@
           if (confirm('Еще раз хотите играть ')) {
             result.computer = TotalComp;
             result.player = TotalUser;
-            start();
+            start();   // ЕСЛИ ЕЩЕ РАЗ ХОТЯТ ИГРАТЬ НАЧИНАЕМ ЕЩЕ РАЗ RECURSIVE 
             break;
 
           } else {
             break;
           }
         } else {
-          let getmenu = getPromptValue(beginuser, beginuser == 1 ? result.player : result.computer);
 
+          /* ИГРОК ВВОДИТ ДАННЫЙ ПО ШАРИКУ ИЛИ СЧЕТНЫЙ И НЕСЧЁТНИЙ ПО ОЧЕРЕДУ */
+          let getmenu = getPromptValue(beginuser, beginuser == 1 ? result.player : result.computer);           
+              
+           /* COMPUTER  ПОЛУЧАЕТ РАНДОМ ДАННЫЙ ПО ШАРИКУ ИЛИ СЧЕТНЫЙ И НЕСЧЁТНИЙ ПО ОЧЕРЕДУ НН*/
           let getrandom = getRandomValue(beginuser, beginuser == 1 ? result.computer : result.player);
 
+
+        /*         МЕНЯЕМ МЕСТО ДАННЫЙ ПО АЛГОРИТМУ                      */
 
           if (beginuser === 1) {
             const temp = Number(getmenu);
@@ -128,6 +137,8 @@
             getmenu = getrandom;
             getrandom = temp;
           }
+
+       /*        РЕШАЕМ КТО ВЫГРАЛ ЭТОТ ЧАСТЬ ИГРУ   ЗАВИСЕТ ОТ ПОРЯДКУ            */
 
           if (getmenu === Number(getrandom) % 2) {
             if (beginuser == 1) {
@@ -155,6 +166,8 @@
             }
           }
         }
+
+        /* МЕНЯЕМ МЕСТО ИГРОКИ */ 
         if (beginuser == 1) {
           beginuser = 2;
         } else {
