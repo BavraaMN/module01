@@ -61,8 +61,7 @@
     const result = {
       player: TotalUser,
       computer: TotalComp,
-    };
-      // const langQUESTIONS = language === 'EN' || language === 'ENG' ? QUESTIONS_ENG : QUESTIONS_RUS;
+    };    
 
     return function start() {
       let beginuser = -1;
@@ -71,8 +70,7 @@
       let selectedOurIndex = -1;
 
       do {
-        const selectWord = prompt('Чего вы выберите камень(к..) ножница(н..) бумаг(б..)', '');
-        //  console.log('Усложненное задание 2 чего вы выберите камень(к..) ножница(н..) бумаг(б..)', selectWord);
+        const selectWord = prompt('Чего вы выберите камень(к..) ножница(н..) бумаг(б..)', '');     
 
         if (FIGURES_RUS[0].indexOf(selectWord) === 0) {
           selectedOurIndex = 0; //   alert('ок камень');
@@ -82,12 +80,7 @@
         } else if (FIGURES_RUS[2].indexOf(selectWord) === 0) {
           selectedOurIndex = 2;
         }
-        /*  }
-            while (selectedOurIndex == -1)
-
-
-         do
-           {*/
+     
         alert('ВЫ ВЫБРАЛИ  ' + FIGURES_RUS[selectedOurIndex]);
         selectedtheirindex = getRandomIntInclusive(0, 2);
         alert('КОМПЬЮТОР ВЫБРАЛ  ' + FIGURES_RUS[selectedtheirindex]);
